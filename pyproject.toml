@@ -1,0 +1,34 @@
+[project]
+name = "core"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "alembic",
+    "asyncpg",
+    "authlib",
+    "fastapi[all]",
+    "httpx",
+    "pre-commit",
+    "pydantic-settings",
+    "PyJWT[cryptography]",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-xdist",
+    "ruff",
+    "slowapi",
+    "sqlalchemy[asyncio]",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["app/tests", "app/users/tests"]
+pythonpath = ["."]
+addopts = ["-v", "--tb=short"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+line-length = 120
+exclude = ["alembic/versions"]
+
+[tool.vercel.scripts]
+build = "uv run alembic upgrade head"
