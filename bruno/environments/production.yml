@@ -1,0 +1,28 @@
+name: production
+variables:
+  - secret: true
+    name: host
+  - name: auth
+    value: "{{host}}/api/auth"
+  - secret: true
+    name: user_username
+  - secret: true
+    name: user_password
+  - secret: true
+    name: user_access_token
+  - name: users
+    value: "{{host}}/api/users"
+  - secret: true
+    name: admin_username
+  - secret: true
+    name: admin_password
+  - secret: true
+    name: admin_access_token
+  - secret: true
+    name: access_token
+  - secret: true
+    name: user_id
+  - secret: true
+    name: admin_user_id
+  - secret: true
+    name: user_user_id
