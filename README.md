@@ -10,6 +10,13 @@
 [![Ruff](https://img.shields.io/badge/Ruff-linter-FFE873?logo=ruff&logoColor=000)](https://docs.astral.sh/ruff/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deploy-000000?logo=vercel&logoColor=white)](https://vercel.com/)
 
+## System Diagram
+
+![System Diagram](assets/system-diagram-v2.png)
+
+For ingestion scaling decisions and the production upload pattern, see
+[Document Ingestion Architecture](docs/architecture/document-ingestion.md).
+
 ## Tech Stack
 
 - **Framework:** FastAPI
