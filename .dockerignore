@@ -1,14 +1,44 @@
+# Version control
 .git
-.venv
-venv
-env
+.gitignore
+
+# Python
 __pycache__
+*.py[cod]
 *.pyc
-.env
-.env.*
-!.env.example
+.venv/
+.venv
+venv/
+
+# Testing
 .pytest_cache
 .coverage
-htmlcov
+htmlcov/
+.tox/
+
+# IDE
+.vscode/
+.idea/
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
+
+# Docs
+docs/
 *.md
 !README.md
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+logs/
