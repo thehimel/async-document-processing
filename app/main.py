@@ -49,6 +49,9 @@ app.include_router(api_router, prefix="/api")
 class RootResponse(BaseModel):
     message: str
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
 
 @app.get("/", name="root", response_model=RootResponse)
 def root() -> RootResponse:
