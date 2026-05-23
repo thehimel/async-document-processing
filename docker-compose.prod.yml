@@ -16,7 +16,10 @@ services:
       retries: 5
 
   api:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile.prod
+
     container_name: ${PROJECT_NAME:-core}-api
     restart: unless-stopped
     depends_on:
@@ -34,6 +37,9 @@ services:
       JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
       JWT_ACCESS_TOKEN_EXPIRE_MINUTES: ${JWT_ACCESS_TOKEN_EXPIRE_MINUTES:-30}
       CORS_ORIGINS: ${CORS_ORIGINS}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      SESSION_SECRET_KEY: ${SESSION_SECRET_KEY}
 
 volumes:
   postgres_data:
